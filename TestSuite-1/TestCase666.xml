@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f888672b-c4b6-4aab-8fd4-a8ded87b2031" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase666" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f888672b-c4b6-4aab-8fd4-a8ded87b2031fileName">TestCase666</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="httprequest" name="HTTP Request" id="283fdbc5-922c-4825-9d2e-084fa8af53d2">
+    <con:settings/>
+    <con:config method="GET" xsi:type="con:HttpRequest" id="fe6c8a92-22ec-44cd-af0c-326bde37d879" name="HTTP Request" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings/>
+      <con:endpoint>http://rapis02.aqa.com.ru/WCFREST/Service.svc/Stroka</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>x</con:name>
+          <con:value>string</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>string</con:default>
+          <con:path xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="CreateAndWaitForRemoveFile" name="Create File" id="83f5bff9-f07f-4f72-828d-667d910a51a0">
+    <con:settings/>
+    <con:config>
+      <FileName>test.txt</FileName>
+      <FileContent>Something</FileContent>
+      <FolderPath>C:\Temp\</FolderPath>
+      <Timeout>0</Timeout>
+      <WaitForFileRemove>false</WaitForFileRemove>
+      <OverwriteExisting>false</OverwriteExisting>
+      <FileEncoding>Unicode</FileEncoding>
+      <Precision>seconds</Precision>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

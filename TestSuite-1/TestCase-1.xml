@@ -4,37 +4,6 @@
     <con:setting id="ded506a1-c6cc-4681-a8e6-64aa54174299fileName">TestCase-1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="request" id="1c9e5604-215d-407e-8bb4-fd0c9fabb22c" name="Con_Stroka - Request 1">
-    <con:settings/>
-    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:interface>Test_serviceSoap</con:interface>
-      <con:operation>Con_Stroka</con:operation>
-      <con:request name="Con_Stroka - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c1850f1a-0090-4a9b-bb1f-61e642dd9f04">
-        <con:settings/>
-        <con:encoding>UTF-8</con:encoding>
-        <con:endpoint>http://rapis02.aqa.com.ru/SOAP/Service1.asmx</con:endpoint>
-        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost/test_service/Service1.asmx">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ser:Con_Stroka>
-         <!--Optional:-->
-         <ser:x>Test</ser:x>
-         <!--Optional:-->
-         <ser:y>String</ser:y>
-      </ser:Con_Stroka>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request>
-        <con:assertion type="SOAP Response" id="ed571842-86f8-4851-9d18-6a39693977ad" name="SOAP Response"/>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/test_service/Service1.asmx/Con_Stroka"/>
-        <con:wsrmConfig version="1.2"/>
-      </con:request>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="REST Request 1" id="6bf7947f-c199-46a4-9508-fb780f1657ce">
     <con:settings/>
     <con:config service="Service 1" resourcePath="/WCFREST/Service.svc/testComplexClass" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -44,40 +13,31 @@
         </con:settings>
         <con:endpoint>http://rapis02.aqa.com.ru</con:endpoint>
         <con:request>{
-  "kind": "youtube#searchListResponse",
-  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/PaiEDiVxOyCWelLPuuwa9LKz3Gk\"",
-  "nextPageToken": "CAUQAA",
-  "regionCode": "KE",
-  "pageInfo": {
-    "totalResults": 4249,
-    "resultsPerPage": 5
-  },
-  "items": [
+    "glossary":
     {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/QpOIr3QKlV5EUlzfFcVvDiJT0hw\"",
-      "id": {
-        "kind": "youtube#channel",
-        "channelId": "UCJowOS1R0FnhipXVqEnYU1A"
-      }
-    },
-    {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/AWutzVOt_5p1iLVifyBdfoSTf9E\"",
-      "id": {
-        "kind": "youtube#video",
-        "videoId": "Eqa2nAAhHN0"
-      }
-    },
-    {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/2dIR9BTfr7QphpBuY3hPU-h5u-4\"",
-      "id": {
-        "kind": "youtube#video",
-        "videoId": "IirngItQuVs"
-      }
+        "title": "example glossary",
+        "GlossDiv":
+        {
+            "title": "S",
+            "GlossList":
+            {
+                "GlossEntry":
+                {
+                    "ID": "SGML",
+                    "SortAs": "SGML",
+                    "GlossTerm": "Standard Generalized Markup Language",
+                    "Acronym": "SGML",
+                    "Abbrev": "ISO 8879:1986",
+                    "GlossDef": 
+                    {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                        "GlossSeeAlso": ["GML", "XML"]
+                    },
+                    "GlossSee": "markup"
+                }
+            }
+        }
     }
-  ]
 }</con:request>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
@@ -93,15 +53,22 @@
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
+      <con:dataSource type="Data Generator">
         <con:configuration>
-          <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
-          <connstr>jdbc:sqlserver://rapis01.aqa.com.ru:1433;databaseName=DatabaseVariable;user=DatabaseVariable;password=PASS_VALUE</connstr>
-          <pass>DatabaseVariable</pass>
-          <Connection/>
-          <query>Select table1.ID as table1_ID, table1.Name as table1_Name  From table1</query>
-          <fetchSize>3000</fetchSize>
-          <stored-procedure>false</stored-procedure>
+          <generatedDataCount>34</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>-1</lastSelectedProperty>
+          <GeneratorType0>BOOL</GeneratorType0>
+          <PropertyName0>table1_ID</PropertyName0>
+          <repetitionCounttable1_ID>0</repetitionCounttable1_ID>
+          <repeatValuestable1_ID>false</repeatValuestable1_ID>
+          <boolViewtable1_ID>YesNo</boolViewtable1_ID>
+          <GeneratorType1>BOOL</GeneratorType1>
+          <PropertyName1>table1_Name</PropertyName1>
+          <repetitionCounttable1_Name>0</repetitionCounttable1_Name>
+          <repeatValuestable1_Name>false</repeatValuestable1_Name>
+          <boolViewtable1_Name>Classic</boolViewtable1_Name>
+          <escapeSpaceSequence/>
         </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
@@ -115,38 +82,31 @@
   <con:testStep type="groovy" name="Groovy Script" id="e8be80c2-20d2-4516-a2b5-0d0569b62f4e">
     <con:settings/>
     <con:config>
-      <script>log.info("Branch Master")
+      <script>log.info("Branch Test-1")
 
-/* Walk a dir that excludes all matching conditions, and then let fileHandler to process the files. */
-def walk(File file, List excludeDirs, List excludeFileExts, Closure fileHandler) {
-  if (file.isDirectory()) {
-    normalizedPath = file.path.replaceAll("\\\\", "/")
-    if (!excludeDirs.find{ dir -> normalizedPath =~ dir })
-      file.eachFile{ subFile -> walk(subFile, excludeDirs, excludeFileExts, fileHandler) }
-  } else if (file.isFile()) {  
-    if (!excludeFileExts.find{ ext -> file.name.endsWith(ext) })
-      fileHandler(file)
-  }
-}
-
-// Main script
-//   - Go into a directory and find all files that has 'Copyright (c)' text in header.
-dir = args[0]
-excludeDirs = ['\\./hg', '^\\./target']
-excludeFileExts = ['.orig']
-walk(new File(dir), excludeDirs, excludeFileExts) { file ->
-  file.withReader() { reader ->
-    while((line = reader.readLine()) != null) {
-      matcher = (line =~ /Copyright \(c\)/)
-      if (matcher) {
-        println([matcher, file])
-        break
-      }
-    }
-  }
-}</script>
+// Print an text entry element inside a jar file. Default o the manifest file.
+// @author: Zemian Deng 20120709
+file = new File(args[0])
+name = args.length > 1 ? args[1] : "META-INF/MANIFEST.MF"
+jarfile = new java.util.jar.JarFile(file)
+entry = jarfile.getEntry(name)
+istream = jarfile.getInputStream(entry)
+istream.eachLine{ println(it) }
+istream.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="manualTestStep" name="Manual" id="e1ed0937-3461-47d2-9431-f67beb516c08">
+    <con:description>qwerty</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:expectedResult>123456</con:expectedResult>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>e1ed0937-3461-47d2-9431-f67beb516c08</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
