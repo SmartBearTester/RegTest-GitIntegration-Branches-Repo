@@ -4,37 +4,6 @@
     <con:setting id="ded506a1-c6cc-4681-a8e6-64aa54174299fileName">TestCase-1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="request" id="1c9e5604-215d-407e-8bb4-fd0c9fabb22c" name="Con_Stroka - Request 1">
-    <con:settings/>
-    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:interface>Test_serviceSoap</con:interface>
-      <con:operation>Con_Stroka</con:operation>
-      <con:request name="Con_Stroka - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c1850f1a-0090-4a9b-bb1f-61e642dd9f04">
-        <con:settings/>
-        <con:encoding>UTF-8</con:encoding>
-        <con:endpoint>http://rapis02.aqa.com.ru/SOAP/Service1.asmx</con:endpoint>
-        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost/test_service/Service1.asmx">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ser:Con_Stroka>
-         <!--Optional:-->
-         <ser:x>Test</ser:x>
-         <!--Optional:-->
-         <ser:y>String</ser:y>
-      </ser:Con_Stroka>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request>
-        <con:assertion type="SOAP Response" id="ed571842-86f8-4851-9d18-6a39693977ad" name="SOAP Response"/>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/test_service/Service1.asmx/Con_Stroka"/>
-        <con:wsrmConfig version="1.2"/>
-      </con:request>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="REST Request 1" id="6bf7947f-c199-46a4-9508-fb780f1657ce">
     <con:settings/>
     <con:config service="Service 1" resourcePath="/WCFREST/Service.svc/testComplexClass" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -43,42 +12,35 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>http://rapis02.aqa.com.ru</con:endpoint>
-        <con:request>{
-  "kind": "youtube#searchListResponse",
-  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/PaiEDiVxOyCWelLPuuwa9LKz3Gk\"",
-  "nextPageToken": "CAUQAA",
-  "regionCode": "KE",
-  "pageInfo": {
-    "totalResults": 4249,
-    "resultsPerPage": 5
-  },
-  "items": [
-    {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/QpOIr3QKlV5EUlzfFcVvDiJT0hw\"",
-      "id": {
-        "kind": "youtube#channel",
-        "channelId": "UCJowOS1R0FnhipXVqEnYU1A"
+        <con:request>[
+  {
+    "_id": "5973782bdb9a930533b05cb2",
+    "isActive": true,
+    "balance": "$1,446.35",
+    "age": 32,
+    "eyeColor": "green",
+    "name": "Logan Keller",
+    "gender": "male",
+    "company": "ARTIQ",
+    "email": "logankeller@artiq.com",
+    "phone": "+1 (952) 533-2258",
+    "friends": [
+      {
+        "id": 0,
+        "name": "Colon Salazar"
+      },
+      {
+        "id": 1,
+        "name": "French Mcneil"
+      },
+      {
+        "id": 2,
+        "name": "Carol Martin"
       }
-    },
-    {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/AWutzVOt_5p1iLVifyBdfoSTf9E\"",
-      "id": {
-        "kind": "youtube#video",
-        "videoId": "Eqa2nAAhHN0"
-      }
-    },
-    {
-      "kind": "youtube#searchResult",
-      "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/2dIR9BTfr7QphpBuY3hPU-h5u-4\"",
-      "id": {
-        "kind": "youtube#video",
-        "videoId": "IirngItQuVs"
-      }
-    }
-  ]
-}</con:request>
+    ],
+    "favoriteFruit": "banana"
+  }
+]</con:request>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -88,26 +50,31 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="delay" name="Delay" id="6faaece4-f2a0-47e2-a236-081927540199">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
   <con:testStep type="datasource" name="DataSource" id="12d5a3c1-6aa5-44bf-952e-71e6f72dd91c">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
+      <con:dataSource type="Excel">
         <con:configuration>
-          <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
-          <connstr>jdbc:sqlserver://rapis01.aqa.com.ru:1433;databaseName=DatabaseVariable;user=DatabaseVariable;password=PASS_VALUE</connstr>
-          <pass>DatabaseVariable</pass>
-          <Connection/>
-          <query>Select table1.ID as table1_ID, table1.Name as table1_Name  From table1</query>
-          <fetchSize>3000</fetchSize>
-          <stored-procedure>false</stored-procedure>
+          <file>D:/ZIP data.xlsx</file>
+          <worksheet/>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>table1_ID</con:property>
-      <con:property>table1_Name</con:property>
+      <con:property>ZIP</con:property>
+      <con:property>City</con:property>
+      <con:property>another</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -115,38 +82,24 @@
   <con:testStep type="groovy" name="Groovy Script" id="e8be80c2-20d2-4516-a2b5-0d0569b62f4e">
     <con:settings/>
     <con:config>
-      <script>log.info("Branch Master")
+      <script>log.info("Branch qwerty")
 
-/* Walk a dir that excludes all matching conditions, and then let fileHandler to process the files. */
-def walk(File file, List excludeDirs, List excludeFileExts, Closure fileHandler) {
-  if (file.isDirectory()) {
-    normalizedPath = file.path.replaceAll("\\\\", "/")
-    if (!excludeDirs.find{ dir -> normalizedPath =~ dir })
-      file.eachFile{ subFile -> walk(subFile, excludeDirs, excludeFileExts, fileHandler) }
-  } else if (file.isFile()) {  
-    if (!excludeFileExts.find{ ext -> file.name.endsWith(ext) })
-      fileHandler(file)
-  }
-}
+jdbc_url = "jdbc:h2:~/test"
+username = "sa"
+password = ""
+driver = "org.h2.Driver"
 
-// Main script
-//   - Go into a directory and find all files that has 'Copyright (c)' text in header.
-dir = args[0]
-excludeDirs = ['\\./hg', '^\\./target']
-excludeFileExts = ['.orig']
-walk(new File(dir), excludeDirs, excludeFileExts) { file ->
-  file.withReader() { reader ->
-    while((line = reader.readLine()) != null) {
-      matcher = (line =~ /Copyright \(c\)/)
-      if (matcher) {
-        println([matcher, file])
-        break
-      }
-    }
-  }
-}</script>
+Class.forName(driver)
+conn = java.sql.DriverManager.getConnection(jdbc_url, username, password)
+print conn
+conn.close()</script>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>6faaece4-f2a0-47e2-a236-081927540199</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
