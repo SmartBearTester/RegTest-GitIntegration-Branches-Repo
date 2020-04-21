@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="1ad50c06-c8d6-40b6-a451-3af13166934c" created="2.7.0" activeEnvironment="Default environment" name="SwitchBranchesProject" resourceRoot="" updated="2.7.0" encryptionMode="Not encrypted" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="1ad50c06-c8d6-40b6-a451-3af13166934c" created="2.7.0" activeEnvironment="Default environment" name="SwitchBranchesProject" resourceRoot="" updated="3.2.5-AT" encryptionMode="Not encrypted" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="1ad50c06-c8d6-40b6-a451-3af13166934cfileName">SwitchBranchesProject</con:setting>
   </con:settings>
